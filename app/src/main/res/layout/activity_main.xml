@@ -20,11 +20,14 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="Autofill,RtlSymmetry,TextFields" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_send"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?actionBarSize"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
         android:text="@string/send"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_main_activity"

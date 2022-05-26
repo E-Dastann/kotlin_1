@@ -2,28 +2,28 @@ package com.example.kotlin_1
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.example.kotlin_1.databinding.ActivityMain2Binding
 
 class MainActivity2 : AppCompatActivity() {
-    private lateinit var textSecond: EditText
-    private lateinit var btnSecond: Button
+    private lateinit var binding: ActivityMain2Binding
+
     companion object {
         const val EXTRA_DATA_NAME = "extra_data_name"
+        const val SEND_DATA="key"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityMain2Binding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
-        textSecond = findViewById(R.id.et_second_main)
-        btnSecond = findViewById(R.id.btn_second)
+        setContentView(binding.root)
 
-        val desc = intent.getStringExtra("name")
-        textSecond.setText(desc)
 
-        btnSecond.setOnClickListener {
-            val data = textSecond.text.toString()
+        val desc = intent.getStringExtra(SEND_DATA)
+        binding.etSecondMain.setText(desc)
+
+        binding.btnSecond.setOnClickListener {
+            val data = binding.etSecondMain.text.toString()
             val intent = Intent()
             intent.putExtra(EXTRA_DATA_NAME, data)
             setResult(
