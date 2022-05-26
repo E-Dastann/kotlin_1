@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">kotlin_1</string>
+    <string name="text_here">Text here</string>
+    <string name="send">send</string>
+</resources>
